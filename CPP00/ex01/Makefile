@@ -1,29 +1,29 @@
-NAME = megaphone
 CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -fsanitize=address
+RM = rm -rf
+NAME = CallMeMaybe
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 megaphone.cpp
+SRCS = Contact.cpp\
+	   main.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-SRC =  \
-	megaphone.cpp \
+all: $(NAME)
 
-OBJ = $(SRC:.c=.o)
-.SILENT:
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-all : ${NAME}
+%.o: %.cpp
+	${CC} ${CFLAGS} -c $< -o $@
 
-${NAME} : ${OBJ}
-	$(CC) $(OBJ) -o $(NAME)
+clean:
+	$(RM) $(OBJS)
 
-.o: .c
-	${CC} -c ${CFLAGS} $< -o $@
-
-clean: 
-	rm -f $(OBJ) 
-	printf '\033[32m[ ✔ ] %s\n\033[0m' "cleanclean"
-	
 fclean: clean
-	rm -f $(NAME) 
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re all
+run: all clean
+	./$(NAME)
+
+.PHONY: all clean fclean re run

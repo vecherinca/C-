@@ -6,8 +6,9 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:54:20 by mklimina          #+#    #+#             */
-/*   Updated: 2023/12/16 18:54:21 by mklimina         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:59:13 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "MyAwesomeNotebook.hpp"

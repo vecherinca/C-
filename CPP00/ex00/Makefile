@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 megaphone.cpp
 SRC =  \
 	megaphone.cpp \
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 .SILENT:
 
 all : ${NAME}
