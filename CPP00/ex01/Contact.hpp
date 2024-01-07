@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:20:09 by mklimina          #+#    #+#             */
-/*   Updated: 2023/12/23 17:04:09 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:15:43 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ class Contact
         const std::string& getNickname(void) const;
         const std::string& getphoneNumber(void) const;
         const std::string& getdarkestSecret(void) const;
+        const int& getIndex(void) const;
         //setters
         void setfirstName(std::string str) ;
+        void setIndex(int i) ;
         void setlastName(std::string str) ;
         void setNickname(std::string str) ;
         void setphoneNumber(std::string str) ;
         void setdarkestSecret(std::string str) ;
-        int         index;
         
 	private:
                 std::string firstName;
@@ -43,6 +44,7 @@ class Contact
                 std::string nickname;
                 std::string phoneNumber;
                 std::string darkestSecret;
+                 int         index;
     
         
 };

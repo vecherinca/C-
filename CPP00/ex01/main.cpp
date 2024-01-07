@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:28:29 by mklimina          #+#    #+#             */
-/*   Updated: 2023/12/23 17:23:33 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:42:23 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(void)
 {
     int userindex;
 	MyAwesomePhonebook PB;
+    PB.number_of_contacts = 0;
     std::cout << "ﮩ٨ـﮩﮩ٨ـ🫀ﮩ٨ـﮩﮩ٨ـ ﮩ٨ـﮩﮩ٨ـ🫀ﮩ٨ـﮩﮩ٨ـ \n";
 	std::cout << RED << "       H" << ORANGE << "E" << YELLOW << "L" << GREEN << "L" << BLUE << "O" << RESET << "\n" ;
     std::cout << "  YOU LOOK SO GOOD \n";
@@ -36,19 +37,24 @@ int main(void)
 	std::cout << "                                        \n";	
     while (1)
     {
-        
         std::string userinput; 
         userindex = 0;
         std::cout << "What u want to do?: ";
-        std::cin >> userinput;
+        std::getline(std::cin, userinput);
         if (userinput.compare("EXIT") == 0)
         {
              std::cout << "ADIOOOOOOOSSSSSSSSSSSS";
              return(0);
         }
-        else if (userinput.compare("ADD") == 0)
+        if (userinput.compare("ADD") == 0)
         {
             PB.addContact(userindex);
+            PB.number_of_contacts ++;
+            userindex++;
+        }
+        if(userinput.compare("SEARCH\n"))
+        {
+            PB.displayContacts(PB);
         }
          
     }

@@ -23,6 +23,11 @@ const std::string& Contact::getdarkestSecret(void) const
 {
 	return(this->darkestSecret);
 }
+
+const int& Contact::getIndex(void) const
+{
+	return(this->index);
+}
 // setters
 void Contact::setfirstName(std::string str)
 {
@@ -46,4 +51,8 @@ void Contact::setphoneNumber(std::string str)
 void Contact::setdarkestSecret(std::string str) 
 {
 	this -> darkestSecret = str;
+}
+void Contact::setIndex(int i) 
+{
+	this -> index = i;
 }
