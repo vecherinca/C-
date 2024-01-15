@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:28:29 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/07 16:42:23 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/15 21:18:48 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyAwesomePhoneBook.hpp"
+
 const std::string RED = "\033[31m";
 const std::string ORANGE = "\033[33m";
 const std::string YELLOW = "\033[93m";
@@ -21,7 +22,6 @@ const std::string RESET = "\033[0m";
 
 int main(void)
 {
-    int userindex;
 	MyAwesomePhonebook PB;
     PB.number_of_contacts = 0;
     std::cout << "ﮩ٨ـﮩﮩ٨ـ🫀ﮩ٨ـﮩﮩ٨ـ ﮩ٨ـﮩﮩ٨ـ🫀ﮩ٨ـﮩﮩ٨ـ \n";
@@ -38,7 +38,6 @@ int main(void)
     while (1)
     {
         std::string userinput; 
-        userindex = 0;
         std::cout << "What u want to do?: ";
         std::getline(std::cin, userinput);
         if (userinput.compare("EXIT") == 0)
@@ -46,16 +45,14 @@ int main(void)
              std::cout << "ADIOOOOOOOSSSSSSSSSSSS";
              return(0);
         }
-        if (userinput.compare("ADD") == 0)
+        else if (userinput.compare("ADD") == 0)
         {
-            PB.addContact(userindex);
+            PB.addContact();
             PB.number_of_contacts ++;
-            userindex++;
         }
-        if(userinput.compare("SEARCH\n"))
+        else if (userinput.compare("SEARCH")==0)
         {
             PB.displayContacts(PB);
         }
-         
-    }
+}
 }

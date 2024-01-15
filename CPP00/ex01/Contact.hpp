@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:20:09 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/07 16:15:43 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/15 21:43:01 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class Contact
         void setNickname(std::string str) ;
         void setphoneNumber(std::string str) ;
         void setdarkestSecret(std::string str) ;
+        void ft_view_contact(void);
+        void ft_view_full_contact(int index);
         
 	private:
                 std::string firstName;
@@ -44,10 +46,11 @@ class Contact
                 std::string nickname;
                 std::string phoneNumber;
                 std::string darkestSecret;
-                 int         index;
+                int         index;
     
         
 };
+
 
 //assign getters and setters 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyAwesomePhoneBook.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:54:37 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/07 16:52:42 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:15:14 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class MyAwesomePhonebook
 	    public:
        /* Default constructor */
        //MyAwesomePhonebook();
-            void addContact(int index);
+            int contact_nb;
+            void addContact();
             void displayContacts(const MyAwesomePhonebook& phonebook);
             size_t number_of_contacts;
        //void searchContact(void);
@@ -49,37 +50,58 @@ std::string get_input(std::string question)
     return input;
 }
 
-void MyAwesomePhonebook::addContact(int index)
+void MyAwesomePhonebook::addContact()
 {
-    if (index > MAX_CONTACT_INDEX)
-        index = MAX_CONTACT_INDEX;
-    contacts[index].setIndex(index);
-    contacts[index].setfirstName(get_input("Your name please?: "));
-    contacts[index].setlastName(get_input("Your last name please?: "));
-    contacts[index].setNickname(get_input("Your nickname name please?: "));
-    contacts[index].setphoneNumber(get_input("Your phone number please?: "));
-    contacts[index].setdarkestSecret(get_input("Your darkest darkest secret please?(Won't tell anyone): "));
+    
+    if (number_of_contacts > MAX_CONTACT_INDEX)
+        number_of_contacts = MAX_CONTACT_INDEX;
+    
+    contacts[number_of_contacts].setIndex(number_of_contacts);
+    contacts[number_of_contacts].setfirstName(get_input("Your name please?: "));
+    contacts[number_of_contacts].setlastName(get_input("Your last name please?: "));
+    contacts[number_of_contacts].setNickname(get_input("Your nickname name please?: "));
+    contacts[number_of_contacts].setphoneNumber(get_input("Your phone number please?: "));
+    contacts[number_of_contacts].setdarkestSecret(get_input("Your darkest darkest secret please?(Won't tell anyone): "));
+
+    // std::cout << " Index: " << contacts[number_of_contacts].getIndex() << std::endl;
+    // std::cout << "First Name: " << contacts[number_of_contacts].getfirstName() << std::endl;
+    // std::cout << "Last Name: " << contacts[number_of_contacts].getlastName() << std::endl;
+    // std::cout << "Nickname: " << contacts[number_of_contacts].getNickname() << std::endl;
+    // std::cout << "Phone Number: " << contacts[number_of_contacts].getphoneNumber() << std::endl;
+    
+   
     
 }
 
-void displayContact(int index, Contact contact) {
-        std::cout << std::setw(10) << std::truncate(std::to_string(contact.getIndex(),10)) << "|"
-                  << std::setw(10) << truncate(contact.getfirstName(),10) << "|"
-                  << std::setw(10) << truncate(contact.getlastName(), 10) << "|"
-                  << std::setw(10) << truncate(contact.getNickname(), 10) << std::endl;
-    }
-
 void MyAwesomePhonebook::displayContacts(const MyAwesomePhonebook& phonebook) {
     
-        std::cout << std::right;
+        std::string input;
+        size_t index;
         std::cout << std::setw(10) << "Index" << "|"
                   << std::setw(10) << "First Name" << "|"
                   << std::setw(10) << "Last Name" << "|"
                   << std::setw(10) << "Nickname" << std::endl;
-
+         
         for (size_t i = 0; i < phonebook.number_of_contacts; ++i) {
-            displayContact(i, phonebook.contacts[i]);
+            contacts[i].ft_view_contact();
         }
+        while (1)
+        {
+            std::cout << "Provide contact index: ";
+            std::getline(std::cin, input);
+            index = stoi(input);
+            if (!index)
+                std::cout << "Index does not exist. Try another one" << std::endl;
+            else
+                if (index > phonebook.number_of_contacts)
+                    std::cout << "Index does not exist. Try another one" << std::endl;
+                else
+                {
+                    contacts[index].ft_view_full_contact(index);
+                    break;
+                }
+        }
+        
     }
     
 #endif
