@@ -6,7 +6,7 @@
 /*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:28:29 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/15 21:18:48 by maria            ###   ########.fr       */
+/*   Updated: 2024/01/16 21:50:34 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int main(void)
     {
         std::string userinput; 
         std::cout << "What u want to do?: ";
-        std::getline(std::cin, userinput);
+        if (!std::getline(std::cin, userinput))
+            exit(-5);
         if (userinput.compare("EXIT") == 0)
         {
              std::cout << "ADIOOOOOOOSSSSSSSSSSSS";
