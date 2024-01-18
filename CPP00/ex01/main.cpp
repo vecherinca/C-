@@ -6,7 +6,7 @@
 /*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:28:29 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/16 21:50:34 by maria            ###   ########.fr       */
+/*   Updated: 2024/01/17 20:44:25 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
     std::cout << "                                        \n";
     std::cout << "                                        \n";
     std::cout << "                                        \n";
-    std::cout << "You have three commands to choose from: \n1.ADD(👉👈)\n2.SEARCH(🤗)\n3.EXIT(🥵🤏🖕ᶠYͧoͨᵏu)\n";
+    std::cout << "You have three commands to choose from: \n1.ADD(👉👈)\n2.SEARCH(🤗)\n3.EXIT(:())\n";
 	std::cout << "                                        \n";	
     while (1)
     {

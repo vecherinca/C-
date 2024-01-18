@@ -6,7 +6,7 @@
 /*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:54:37 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/16 22:40:19 by maria            ###   ########.fr       */
+/*   Updated: 2024/01/17 20:01:26 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ std::string get_input(std::string question)
 {
     std::string input;
     std::cout << question;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        exit(-1);
 
     while (input.empty())
     {
         std::cout << question;
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+            exit(-1);
         
     }
     return input;
