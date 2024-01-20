@@ -82,7 +82,5 @@ void	Contact::ft_view_full_contact(int index)
 	std::cout << "Last Name: " << this->lastName << std::endl;
 	std::cout << "Nickname: " << this->nickname << std::endl;
 	std::cout << "Phone number: " << this->phoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
 	std::cout << std::endl;
-	
 }

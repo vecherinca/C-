@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:28:29 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/17 20:44:25 by maria            ###   ########.fr       */
+/*   Updated: 2024/01/20 16:52:32 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MyAwesomePhoneBook.hpp"
-
+#include <cstdlib>
 const std::string RED = "\033[31m";
 const std::string ORANGE = "\033[33m";
 const std::string YELLOW = "\033[93m";
@@ -40,7 +40,9 @@ int main(void)
         std::string userinput; 
         std::cout << "What u want to do?: ";
         if (!std::getline(std::cin, userinput))
-            exit(-5);
+        {
+            exit(0);
+        }
         if (userinput.compare("EXIT") == 0)
         {
              std::cout << "ADIOOOOOOOSSSSSSSSSSSS";
@@ -53,7 +55,7 @@ int main(void)
         }
         else if (userinput.compare("SEARCH")==0)
         {
-            PB.displayContacts(PB);
+            PB.displayContacts();
         }
 }
 }
