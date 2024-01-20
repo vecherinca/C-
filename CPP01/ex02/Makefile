@@ -1,10 +1,10 @@
+NAME = HITHISISBRAIN
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
-NAME = CallMeMaybe
 
-SRCS = Contact.cpp\
-	   main.cpp
+SRCS =  main.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

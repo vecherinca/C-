@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:47:48 by maria             #+#    #+#             */
-/*   Updated: 2024/01/17 23:05:40 by maria            ###   ########.fr       */
+/*   Updated: 2024/01/20 19:13:14 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 Zombie::Zombie()
 {
-    this -> name = name;
-    std::cout << "Zombie with is created" << std::endl;
+    std::cout << "zzzzZombie is being boooooorn" << std::endl;
 }
 
 Zombie::~Zombie(void) {
-    std::cout << "Destruction of a zombie " << std::endl;
+    std::cout << "Destruction of a zombie. (Nooooooooo I thought I will live forever)" << std::endl;
 }
 
 void Zombie::announce(int index)
 {
-   std::cout << index << ": Hello helloooo !" << std::endl;
+   std::cout << "Zombie number " << index << " says hello" << std::endl;
 	return ;
 }
 

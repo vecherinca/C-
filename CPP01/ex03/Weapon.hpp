@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:48:12 by maria             #+#    #+#             */
-/*   Updated: 2024/01/20 17:58:50 by mklimina         ###   ########.fr       */
+/*   Created: 2024/01/20 19:35:06 by mklimina          #+#    #+#             */
+/*   Updated: 2024/01/20 19:36:06 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
+#include <iostream>
 
-int main(void)
-{
-	Zombie *MyHorde;
-	int i = 0;
-	int num;
-	
-	std::cout << "How many Zombies you want in your Horde?:";
-	std::cin >> num;
-	
-	MyHorde = zombieHorde(num, "Masha");
-	while (i < num)
-	{
-		MyHorde[i].announce(i+1);
-		i++;
-	}
-	delete [] MyHorde;
-}
+class Weapon {
+private:
+    std::string type;
+
+public:
+    Weapon(const std::string& type); // Constructor (optional based on your needs)
+    
+    const std::string& getType() const; // Returns a const reference to the type
+    void setType(const std::string& newType); // Sets the type
+};
+
+#endif

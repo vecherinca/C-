@@ -5,27 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:48:12 by maria             #+#    #+#             */
-/*   Updated: 2024/01/20 17:58:50 by mklimina         ###   ########.fr       */
+/*   Created: 2024/01/20 19:33:54 by mklimina          #+#    #+#             */
+/*   Updated: 2024/01/20 19:47:53 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-int main(void)
+
+int	main(void)
 {
-	Zombie *MyHorde;
-	int i = 0;
-	int num;
-	
-	std::cout << "How many Zombies you want in your Horde?:";
-	std::cin >> num;
-	
-	MyHorde = zombieHorde(num, "Masha");
-	while (i < num)
 	{
-		MyHorde[i].announce(i+1);
-		i++;
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	delete [] MyHorde;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return (0);
 }
