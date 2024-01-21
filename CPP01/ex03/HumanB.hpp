@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:37:58 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/20 19:48:10 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/21 20:05:49 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ private:
 
 public:
     HumanB(const std::string& name); // Constructor with only name
-    void setWeapon(Weapon& newWeapon); // Method to set the Weapon
-    void attack() const; // Displays the attack message (if a Weapon is set)
+    ~HumanB(void);
+    void setWeapon(Weapon& newWeapon); 
+    void attack(); 
 };
 
 #endif

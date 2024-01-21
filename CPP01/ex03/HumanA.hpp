@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:36:49 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/20 19:53:17 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/21 19:00:10 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ private:
 
 public:
     HumanA(const std::string& name, Weapon& weapon); 
-    void attack() const; 
+    void	attack(void);
+    ~HumanA(void);
 };
 
 #endif

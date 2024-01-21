@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:35:06 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/20 19:36:06 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/21 20:00:00 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ private:
     std::string type;
 
 public:
-    Weapon(const std::string& type); // Constructor (optional based on your needs)
-    
-    const std::string& getType() const; // Returns a const reference to the type
-    void setType(const std::string& newType); // Sets the type
+    Weapon(std::string type); // Constructor (optional based on your needs)
+    ~Weapon(void);
+    std::string& getType(); // Returns a const reference to the type
+    void setType(std::string newType); // Sets the type
 };
 
 #endif
