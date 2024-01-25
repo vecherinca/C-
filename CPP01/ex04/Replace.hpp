@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:55:25 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/22 20:11:51 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:28:31 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ class Replacer
 
 	public:
 		std::string return_replaced_value();
-		void replace_();
-		
-		
-		
+		void replace_(std::string input, std::string to_replace);
 		
 }
 ;
