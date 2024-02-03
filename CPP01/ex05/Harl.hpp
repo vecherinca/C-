@@ -2,7 +2,7 @@
 #define HARL_HPP
 
 #include <iostream>
-
+#include "Colors.hpp"
 class Harl
 {
 	public:
