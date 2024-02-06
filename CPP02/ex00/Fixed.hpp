@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 19:20:58 by maria             #+#    #+#             */
-/*   Updated: 2024/02/06 23:03:19 by maria            ###   ########.fr       */
+/*   Created: 2024/02/04 20:22:31 by maria             #+#    #+#             */
+/*   Updated: 2024/02/04 20:29:38 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "Weapon.hpp"
-#include "HumanB.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-Weapon::Weapon(std::string type) : type(type)
+class Fixed
 {
-    return ;
-}
+  private:
+    int fixed_point_number;
+    static const int fractional_bits;
 
-Weapon::~Weapon(void) 
-{
-    return ;
-}
-
-void Weapon::setType(std::string newType)
-{
-    this -> type = newType;
-}
-
-std::string& Weapon::getType() {
+  public:
+    Fixed();
+    ~Fixed();
     
-    return this->type;
-}
+    int getRawBits( void ) const;
+    void setRawBits(int const raw);
+        
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:33:54 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/21 19:58:28 by maria            ###   ########.fr       */
+/*   Updated: 2024/02/06 23:21:31 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	main(void)
 		club.setType("some other type of club");
 		jim.attack();
 	}
+
 	return (0);
 }

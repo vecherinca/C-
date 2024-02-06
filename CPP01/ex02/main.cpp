@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:17:05 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/20 19:23:14 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/02/05 21:27:16 by maria            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int main(void)
 	std::string &stringREF  = new_variable;
 
 	std::cout  << RED << "The memory address of the string variable:"<< &new_variable << std::endl;
-	std::cout << BLUE << "The memory address held by stringPTR: " << &stringPTR << std::endl;
+	std::cout << BLUE << "The memory address held by stringPTR: " << stringPTR << std::endl;
 	std::cout << YELLOW << "The memory address held by stringREF: " << &stringREF << std::endl;
 	std::cout << RESET << "________________________________________________" << std::endl;
 	std::cout << RED  << "The value of the string variable:" << new_variable<< std::endl;;
-	std::cout << BLUE << "The value pointed to by stringPTR:"<< stringPTR << std::endl;;
+	std::cout << BLUE << "The value pointed to by stringPTR:"<< *stringPTR << std::endl;;
 	std::cout << YELLOW << "The value pointed to by stringREF:" << stringREF << std::endl;;
 }
