@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maria <maria@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:55:35 by mklimina          #+#    #+#             */
-/*   Updated: 2024/01/29 22:22:52 by maria            ###   ########.fr       */
+/*   Updated: 2024/02/09 19:22:33 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void Replacer::replace_(std::string input, std::string to_replace, std::string r
             break;
         }
     }
-        std::ofstream write (input.append(".replace"), std::ios::out);
+        std::ofstream write (input.append(".replace").c_str(), std::ios::out);
         write << result;
         read.close();
         write.close();
