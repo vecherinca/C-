@@ -1,18 +1,18 @@
-NAME = Attack
+NAME = Replacer
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
 
-SRCS =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS =  main.cp Replace.cp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCS:.cp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cp
 	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
