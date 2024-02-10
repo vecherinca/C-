@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:22:31 by maria             #+#    #+#             */
-/*   Updated: 2024/02/09 20:34:41 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/02/10 20:28:12 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,10 @@ class Fixed
     static const int fractional_bits = 8;
 
   public:
-    Fixed();
-    ~Fixed();
-    // Copy constructor
-	  Fixed(const Fixed& copy): fixed_point_number { copy.fixed_point_number }
-    {
-		// no need to check for a denominator of 0 here since copy must already be a valid Fraction
-		std::cout << "Copy constructor called\n"; // just to prove it works
-	}
-  
+    Fixed(void);
+    ~Fixed(void);
+	  Fixed(const Fixed& copy);
+    Fixed& operator=( const Fixed &the_one_being_copied);
     int getRawBits( void ) const;
     void setRawBits(int const raw);
         

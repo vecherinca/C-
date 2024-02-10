@@ -1,9 +1,9 @@
-NAME = Brainzzzzzzzz
+NAME = Fixme
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
 
-SRCS = newZombie.cpp Zombie.cpp randomChump.cpp main.cpp
+SRCS = Fixed.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
