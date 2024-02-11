@@ -23,6 +23,18 @@ void Fixed::setRawBits(int const raw)
 	this->fixed_point_number = raw;
 }
 
+int Fixed::toInt( void ) const
+{
+    // or fixed_point_number >> 8
+    return (this -> fixed_point_number / 256);
+}
+
+float Fixed::toFloat( void ) const
+{
+    return static_cast<float>( this->fixed_point_number ) / ( 1 << this -> fractional_bits );
+
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
@@ -35,6 +47,7 @@ Fixed::Fixed(void)
 	this->fixed_point_number = 0;
 }
 
+// Additional constructors
 Fixed::Fixed(const int integer)
 {
     std::cout << "Integer constructor called" << std::endl;
@@ -48,6 +61,8 @@ Fixed::Fixed(const float floating)
     this -> fixed_point_number =std::roundf(floating * (1 << this ->fractional_bits));
 }
 
+
+// copy constructor + operator overload
 Fixed::Fixed(const Fixed &the_one_being_copied)
 {
 	std::cout << "Copy constructor called\n";
@@ -59,4 +74,9 @@ Fixed& Fixed::operator=(const Fixed &the_one_being_copied)
 	if (this != &the_one_being_copied)
 	this -> fixed_point_number = the_one_being_copied.getRawBits();
 	return(*this);
+}
+
+std::ostream & operator<<( std::ostream & o, Fixed const & i ) {
+    o << i.toFloat();
+    return o;
 }
