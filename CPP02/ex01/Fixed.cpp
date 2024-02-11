@@ -66,7 +66,10 @@ Fixed::Fixed(const float floating)
 Fixed::Fixed(const Fixed &the_one_being_copied)
 {
 	std::cout << "Copy constructor called" << std::endl;;
-	//this -> setRawBits(the_one_being_copied.getRawBits()) ;
+    // important notion: we can't use just the setrawbits as when we
+    // pass the class as the argument we need directly to use =
+    // hence here we use "="
+    //this -> setRawBits(the_one_being_copied.getRawBits()) ;
     *this = the_one_being_copied;
 }
 
