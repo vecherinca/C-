@@ -1,3 +1,7 @@
-//
-// Created by Мария on 11/02/2024.
-//
+#include "ClapTrap.hpp"
+
+int main()
+{
+    ClapTrap f("Lol");
+
+}
