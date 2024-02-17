@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 20:51:57 by mklimina          #+#    #+#             */
-/*   Updated: 2024/02/17 14:21:56 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/02/16 20:51:58 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "Error message" << std::endl;
         return;
     }
-    std::cout << "ClapTrap repairs itself with " << amount <<" number of points" << std::endl;
+    std::cout << "ClapTrap repairs itself with " << amount <<"number of points" << std::endl;
     energy_points-= 1;
     hit_points += amount;
 }

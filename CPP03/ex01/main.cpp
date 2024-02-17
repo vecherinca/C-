@@ -6,13 +6,13 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 20:52:19 by mklimina          #+#    #+#             */
-/*   Updated: 2024/02/16 21:11:41 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:27:28 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
     std::cout <<
@@ -34,20 +34,22 @@ int main() {
     "⬜⬜⬜⬜⬛🟧🟧🟧⬛⬜⬜⬜⬜⬛🟨🟨🟧⬛⬜⬜⬜⬜\n"
     "⬜⬜⬜⬜⬜⬛⬛⬛⬜⬜⬜⬜⬜⬜⬛⬛⬛⬜⬜⬜⬜⬜\n";
     
-    std::cout << "Starting battle..." << std::endl;
+   std::cout << "Starting battle..." << std::endl;
     
     ClapTrap clapTrap1("Masha");
-    ClapTrap clapTrap2("Misha");
-
+    ScavTrap scavTrap1("Misha");
 
     clapTrap1.attack("Misha");
-    clapTrap2.takeDamage(2);
+    scavTrap1.takeDamage(5);
 
-    clapTrap2.attack("Masha");
-    clapTrap1.takeDamage(3);
+    scavTrap1.attack("Masha");
+    clapTrap1.takeDamage(20);
 
-    clapTrap1.beRepaired(5);
-    clapTrap2.beRepaired(5);
+    clapTrap1.attack("Misha");
+    scavTrap1.takeDamage(6);
+
+    scavTrap1.guardGate();
 
     return 0;
+
 }
