@@ -24,8 +24,7 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt( void ) const
 {
-    // or fixed_point_number >> 8
-    return (this -> fixed_point_number / 256);
+    return (this -> fixed_point_number >> this -> fractional_bits);
 }
 
 float Fixed::toFloat( void ) const
