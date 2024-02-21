@@ -6,7 +6,7 @@
 /*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 19:48:25 by mklimina          #+#    #+#             */
-/*   Updated: 2024/02/10 20:36:23 by mklimina         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:26:59 by mklimina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Fixed::Fixed(const float floating)
 {
     //roundf scales the the value to the closest integer representation
     std::cout << "Float constructor called" << std::endl;
-    this -> fixed_point_number =std::roundf(floating * (1 << this ->fractional_bits));
+    this -> fixed_point_number =roundf(floating * (1 << this ->fractional_bits));
 }
 
 
