@@ -16,9 +16,18 @@
 #include <iostream>
 class Animal
 {
-	private:
+    protected:
 		std::string type;
-	public:	
+	public:
+        Animal();
+        Animal(std::string type);
+        Animal(const Animal& cls);
+        Animal& operator=(const Animal& to_be_copied_from);
+        virtual ~Animal();
+
+        virtual void    makeSound( void ) const;
+        std::string     getType( void ) const;
+
 };
 
 #endif

@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "headers/Animal.hpp"
+#include "headers/Dog.hpp"
+#include "headers/Cat.hpp"
+#include "headers/WrongCat.hpp"
 
 int main()
 {
@@ -21,5 +25,8 @@ std::cout << i->getType() << " " << std::endl;
 i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
+delete meta;
+delete j;
+delete i;
 return 0;
 }
