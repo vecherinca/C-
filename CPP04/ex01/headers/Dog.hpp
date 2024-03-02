@@ -13,6 +13,10 @@ public:
     Dog( void );
     ~Dog( void );
     void makeSound() const;
+    void setIdea(const int& index, const std::string& idea);
+    void displayIdeas();
+    
+
 
 };
 #endif

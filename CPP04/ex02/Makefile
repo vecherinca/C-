@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g3
 RM = rm -rf
 
-SRCS =  main.cpp srcs/Animal.cpp srcs/Dog.cpp srcs/Cat.cpp srcs/Brain.cpp
+SRCS =  main.cpp srcs/AAnimal.cpp srcs/Dog.cpp srcs/Cat.cpp srcs/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

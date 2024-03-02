@@ -7,7 +7,6 @@
 int main() {
     
     //const AAnimal youcantcreateme;
-
     const int ARRAY_SIZE = 10; 
     AAnimal* AAnimals[ARRAY_SIZE];
 
@@ -29,10 +28,18 @@ int main() {
 	std::cout << "\033[1;36m" << "-------- Testing Offical Main --------" << "\033[0m" << std::endl;
 	const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
-
-
     delete j;
     delete i;
 
+    std::cout << "\033[1;36m" << "-------- Testing COPY --------" << "\033[0m" << std::endl;
+    Cat cat1;
+    cat1.setIdea(10, "I love eating");
+    Cat cat2;
+
+    cat2 = cat1;
+    std::cout << "\033[1;36m" << "================ cat 1 =================" << "\033[0m" << std::endl;
+    cat1.displayIdeas();
+    std::cout << "\033[1;36m" << "================ cat 2 =================" << "\033[0m" << std::endl;
+    cat2.displayIdeas();
     return 0;
 }

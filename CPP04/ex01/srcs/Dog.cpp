@@ -35,7 +35,21 @@ Dog& Dog::operator=( const Dog& src )
     if (this != &src)
     {
         this->type = src.type;
+		delete this -> brain;
         this->brain = new Brain( *src.brain );
     }
     return *this;
+}
+
+void    Dog::setIdea(const int& index, const std::string& idea) {
+    if (index < 100 && index >= 0) {
+        this->brain->_setIdea(index, idea);
+    }
+   
+}
+
+void    Dog::displayIdeas() {
+    for (int i=0; i<100; i++) {
+        std::cout << "dog idea n" << i << ": \'" << this->brain->getIdea(i) << "\'\n";
+    }
 }
