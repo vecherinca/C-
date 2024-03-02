@@ -1,6 +1,6 @@
 #include "../headers/Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void):Animal("Cat")
 {
     std::cout << "<Cat> constructor called" << std::endl;
 }

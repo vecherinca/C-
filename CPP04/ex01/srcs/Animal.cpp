@@ -1,11 +1,11 @@
 #include "../headers/Animal.hpp"
 
 Animal::Animal() {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default ANIMAL constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type): type(type) {
-    std::cout << "<Animal> constructor called with the type" << type << "assigned."<< std::endl;
+    std::cout << "<Animal> 🐾 constructor called with the type" << type << " assigned."<< std::endl;
 }
 
 Animal::Animal(const Animal& cls)

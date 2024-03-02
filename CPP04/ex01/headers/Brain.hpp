@@ -14,6 +14,8 @@ public:
     ~Brain( void );
     Brain( const Brain& src );
     Brain& operator=( const Brain& rhs );
+    
+    
 };
 
 #endif // BRAIN_HPP

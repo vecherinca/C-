@@ -8,6 +8,8 @@ class Dog: public Animal
 private:
     Brain *brain;
 public:
+    Dog& operator=( const Dog& csl);
+    Dog( const Dog& cls );
     Dog( void );
     ~Dog( void );
     void makeSound() const;

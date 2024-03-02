@@ -3,12 +3,13 @@
 
 Brain::Brain( void )
 {
-    std::cout << "Out of nowhere braaaaain has appeared! PADUMS" << std::endl;
+    std::cout << "🧠 Out of nowhere braaaaain has appeared! PADUMS🧠 " << std::endl;
 }
 
 Brain::~Brain( void )
 {
-    std::cout << "No more brain. Full chaos now!." << std::endl;
+    std::cout << "No more brain. Full chaos now!🤯" << std::endl;
+  
 }
 
 Brain::Brain( const Brain& cls )
