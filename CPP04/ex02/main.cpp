@@ -1,54 +1,38 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mklimina <mklimina@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 20:52:19 by mklimina          #+#    #+#             */
-/*   Updated: 2024/02/17 15:26:53 by mklimina         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "headers/AAnimal.hpp"
+#include "headers/Dog.hpp"
+#include "headers/Cat.hpp"
+#include <iostream>
 
-
-
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
 int main() {
-    std::cout <<
-    "⬜⬜⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬜⬛🟨🟨🟨🟧🟧⬛⬜⬜⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬛🟨⬛🟨🟨🟨🟨🟧⬛⬜⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬛🟨🟨🟨🟨⬛🟨🟧⬛⬜⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬛🟨⬛🟨🟨🟨🟨🟧⬛⬜⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬛🟨⬛⬛⬛⬛⬛🟧🟧⬛⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬜⬛🟨⬛⬛⬛⬛⬛🟨🟧⬛⬜⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬛🟨🟨🟨⬛⬛⬛🟨🟨🟧🟧⬛⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬛🟨🟨🟨🟨🟨🟨🟨🟨🟨🟧🟧🟧⬛⬜⬜⬜⬜\n"
-    "⬜⬛⬛⬛🟨🟨🟧🟨🟨🟨🟨🟨🟨🟧🟧🟧🟧🟧⬛⬛⬛⬜\n"
-    "⬛🟨🟨🟨🟧🟧⬛🟨🟧🟧🟧🟧🟧🟧🟧⬛🟧🟧🟧🟧🟧⬛\n"
-    "⬛🟧🟧🟧⬛⬛⬛🟨🟨🟧🟧🟧🟨🟧🟧⬛⬛⬛🟧🟧🟧⬛\n"
-    "⬜⬛⬛⬛⬜⬜⬛🟨🟨🟨🟨🟨🟨🟧🟧⬛⬜⬜⬛⬛⬛⬜\n"
-    "⬜⬜⬜⬜⬜⬛🟨🟨🟧🟧⬛⬛🟨🟨🟧🟧⬛⬜⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬛🟨🟨🟧🟧⬛⬜⬜⬛🟨🟨🟧🟧⬛⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬛🟧🟧🟧⬛⬜⬜⬜⬜⬛🟨🟨🟧⬛⬜⬜⬜⬜\n"
-    "⬜⬜⬜⬜⬜⬛⬛⬛⬜⬜⬜⬜⬜⬜⬛⬛⬛⬜⬜⬜⬜⬜\n";
     
-    ClapTrap clapTrap("ClapName");
-    FragTrap fragTrap("FragName");
+    //const AAnimal youcantcreateme;
 
-    std::cout << "Starting interactions...\n";
+    const int ARRAY_SIZE = 10; 
+    AAnimal* AAnimals[ARRAY_SIZE];
 
-    fragTrap.attack("ClapName");
-    clapTrap.takeDamage(20);
+    std::cout << "\033[1;36m" << "-------- Creating AAnimals --------" << "\033[0m" << std::endl;
+    for(int i = 0; i < ARRAY_SIZE / 2; ++i) {
+        std::cout << "\033[1;35m" << "Creating Dog " << i + 1 << "\033[0m" << std::endl;
+        AAnimals[i] = new Dog();
+    }
+    for(int i = ARRAY_SIZE / 2; i < ARRAY_SIZE; ++i) {
+        std::cout << "\033[1;35m" << "Creating Cat " << i - ARRAY_SIZE / 2 + 1 << "\033[0m" << std::endl;
+        AAnimals[i] = new Cat();
+    }
 
-    clapTrap.attack("FragName");
-    fragTrap.takeDamage(5);
+    std::cout << "\033[1;36m" << "-------- Deleting AAnimals --------" << "\033[0m" << std::endl;
+    for(int i = 0; i < ARRAY_SIZE; ++i) {
+        std::cout << "\033[1;33m" << "Deleting AAnimal " << i + 1 << "\033[0m" << std::endl;
+        delete AAnimals[i];
+    }
+	std::cout << "\033[1;36m" << "-------- Testing Offical Main --------" << "\033[0m" << std::endl;
+	const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
 
-    // FragTrap offering a high five, showcasing unique behavior
-    fragTrap.highFivesGuys();
+
+    delete j;
+    delete i;
 
     return 0;
-
 }

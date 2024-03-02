@@ -1,9 +1,9 @@
-NAME = ClapTrap
+NAME = Animal
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g3
 RM = rm -rf
 
-SRCS =  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS =  main.cpp srcs/Animal.cpp srcs/Dog.cpp srcs/Cat.cpp srcs/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
+.SILENT:
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@
 
@@ -20,7 +20,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-
 re: fclean all
 
 run: all clean
